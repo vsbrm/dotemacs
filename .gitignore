@@ -1,0 +1,10 @@
+# session files
+session.*
+
+# backup and utosave data
+*~
+\#*
+.\#*
+
+####
+elpa/**
