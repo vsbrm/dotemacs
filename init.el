@@ -7,31 +7,26 @@
            emacs-version
            required_version)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Install packages
-(setq
- package-selected-packages
- '(exotica-theme  ;; my favorite theme
-   f)) ;; package to wirk with files
 
+;; Add Melpa to package sources
 (require 'package)
-(require 'bytecomp)
-
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
-(unless package-archive-contents
-  (package-refresh-contents))
-
-(dolist (package package-selected-packages)
-  (when (and (assq package package-archive-contents)
-             (not (package-installed-p package)))
-(package-install package t)))
+;; Package to install all other packages
+;; Bootstrap `use-package'
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Set up directories
 
-(require 'f)
+(use-package f
+  :ensure t)
 
 (defvar config-dir (f-expand "config" user-emacs-directory)
   "This is directory where all the configuration files are kept.")
@@ -39,4 +34,27 @@
 (add-to-list 'load-path config-dir)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Load all config files
 (require 'config-visual) ;; visual parameters
+(require 'config-editor) ;; editor settings
+
+(provide 'init)
+;;; init.el ends here
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
+ '(package-selected-packages
+   (quote
+    (indent-guide highlight-indent-guides use-package exotica-theme f))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
