@@ -22,6 +22,10 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+;; Try packages without installing
+(use-package try
+  :ensure t)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Set up directories
 
@@ -37,6 +41,7 @@
 ;; Load all config files
 (require 'config-visual) ;; visual parameters
 (require 'config-editor) ;; editor settings
+(require 'config-cc)     ;; c/c++ mode
 
 (provide 'init)
 ;;; init.el ends here
@@ -51,10 +56,10 @@
     ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
  '(package-selected-packages
    (quote
-    (indent-guide highlight-indent-guides use-package exotica-theme f))))
+    (yasnippet-snippets indent-guide highlight-indent-guides use-package exotica-theme f))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0)))))

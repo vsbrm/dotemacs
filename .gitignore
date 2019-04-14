@@ -6,5 +6,6 @@ session.*
 \#*
 .\#*
 
-####
+# package files
 elpa/**
+irony/
