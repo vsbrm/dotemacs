@@ -12,6 +12,16 @@
 ;; Hide toolbar
 (tool-bar-mode 0)
 
+;; Hide top bar
+(menu-bar-mode 0)
+
+;; Set default font
+(set-face-attribute 'default nil
+                    :family "Source Code Pro"
+                    :height 120
+                    :weight 'normal
+                    :width 'normal)
+
 (provide 'config-visual)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; end visual setup
