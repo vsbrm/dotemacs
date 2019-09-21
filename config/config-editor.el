@@ -14,6 +14,9 @@
 ;; Highlight line
 (global-hl-line-mode t)
 
+;; Delete all selected text at once
+(delete-selection-mode t)
+
 ;; turn on highlight matching brackets when cursor is on one
 (show-paren-mode 1)
 
