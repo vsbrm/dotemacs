@@ -17,6 +17,9 @@
 ;; Delete all selected text at once
 (delete-selection-mode t)
 
+;; Use spaces instead of tabs
+(setq indent-tabs-mode nil)
+
 ;; turn on highlight matching brackets when cursor is on one
 (show-paren-mode 1)
 
