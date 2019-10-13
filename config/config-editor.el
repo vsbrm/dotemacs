@@ -90,6 +90,14 @@
               (add-hook 'after-save-hook
                         'counsel-etags-(vector )irtual-update-tags 'append 'local))))
 
+;; projectile
+(use-package projectile
+  :ensure t
+  :bind ("C-c p" . projectile-command-map)
+  :config
+  (projectile-global-mode)
+  (setq projectile-completion-system 'ivy))
+
 (provide 'config-editor)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; end editor setup
