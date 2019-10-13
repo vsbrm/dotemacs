@@ -18,7 +18,7 @@
 (delete-selection-mode t)
 
 ;; Use spaces instead of tabs
-(setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 
 ;; turn on highlight matching brackets when cursor is on one
 (show-paren-mode 1)
@@ -67,6 +67,28 @@
 
 (use-package yasnippet-snippets
   :ensure t)
+
+;; Code navigation with tags
+(use-package counsel-etags
+  :ensure t
+  :bind (("C-]" . counsel-etags-find-tag-at-point))
+  :init
+  (add-hook 'prog-mode-hook
+        (lambda ()
+          (add-hook 'after-save-hook
+            'counsel-etags-virtual-update-tags 'append 'local)))
+  :config
+  (setq counsel-etags-update-interval 60)
+  (add-to-list 'counsel-etags-ignore-directories "build")
+  ;; Don't ask before rereading the TAGS files if they have changed
+  (setq tags-revert-without-query t)
+  ;; Don't warn when TAGS files are large
+  (setq large-file-warning-threshold nil)
+  ;; Setup auto update now
+  (add-hook 'prog-mode-hook
+            (lambda ()
+              (add-hook 'after-save-hook
+                        'counsel-etags-(vector )irtual-update-tags 'append 'local))))
 
 (provide 'config-editor)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
