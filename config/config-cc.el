@@ -20,6 +20,9 @@
   :config
   (add-hook 'irony-mode-hook #'irony-eldoc))
 
+;; Indentation size
+(setq-default default-tab-width 2)
+
 (provide 'config-cc)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; end editor setup
