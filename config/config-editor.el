@@ -11,6 +11,9 @@
 ;; Display line numbers
 (global-display-line-numbers-mode)
 
+;; Show column number
+(setq column-number-mode t)
+
 ;; Highlight line
 (global-hl-line-mode t)
 
