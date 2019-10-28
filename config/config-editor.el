@@ -98,6 +98,26 @@
   (projectile-global-mode)
   (setq projectile-completion-system 'ivy))
 
+;; git
+(use-package magit
+  :ensure t
+  :init
+  (progn
+    (bind-key "C-x g" 'magit-status)
+    ))
+
+(setq magit-status-margin
+      '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 18))
+
+(use-package git-gutter
+  :ensure t
+  :init
+  (global-git-gutter-mode +1))
+
+(use-package git-timemachine
+  :ensure t
+  )
+
 (provide 'config-editor)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; end editor setup
