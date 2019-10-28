@@ -15,6 +15,9 @@
 ;; Hide top bar
 (menu-bar-mode 0)
 
+;; Hide scrollbar
+(scroll-bar-mode 0)
+
 ;; Set default font
 (set-face-attribute 'default nil
                     :family "Source Code Pro"
