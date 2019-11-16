@@ -42,6 +42,7 @@
 (require 'config-visual) ;; visual parameters
 (require 'config-editor) ;; editor settings
 (require 'config-cc)     ;; c/c++ mode
+(require 'config-spell)  ;; spellchecking
 
 (provide 'init)
 ;;; init.el ends here
