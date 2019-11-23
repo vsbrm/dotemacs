@@ -1,6 +1,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Disable startup message
-;;(setq inhibit-startup-message t)
+(setq inhibit-startup-message t)
 
 ;; Exotica theme
 (use-package exotica-theme
