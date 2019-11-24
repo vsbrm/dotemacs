@@ -8,6 +8,15 @@
   :config
   (load-theme 'exotica t))
 
+;; Modeline configuration
+(use-package spaceline
+  :ensure t)
+
+(use-package spaceline-config
+  :ensure spaceline
+  :config
+  (spaceline-emacs-theme)
+  (setq powerline-default-separator 'slant))
 
 ;; Hide toolbar
 (tool-bar-mode 0)

@@ -54,10 +54,11 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
+    ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
  '(package-selected-packages
    (quote
-    (yasnippet-snippets indent-guide highlight-indent-guides use-package exotica-theme f))))
+    (spaceline-all-the-icons all-the-icons spaceline spaceline-config diminish yasnippet-snippets indent-guide highlight-indent-guides use-package exotica-theme f)))
+ '(projectile-mode t nil (projectile)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
