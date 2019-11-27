@@ -14,9 +14,9 @@
 
 (use-package spaceline-config
   :ensure spaceline
+  :init (setq powerline-default-separator 'slant)
   :config
-  (spaceline-emacs-theme)
-  (setq powerline-default-separator 'slant))
+  (spaceline-emacs-theme))
 
 ;; Hide toolbar
 (tool-bar-mode 0)
